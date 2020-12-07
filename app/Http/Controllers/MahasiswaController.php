@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\jurusan;
 use App\Models\mahasiswa;
+use Exception;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,8 +19,9 @@ class MahasiswaController extends Controller
     public function index()
     {
         $mahasiswa = mahasiswa::all();
+        $jurusan = jurusan::all();
         // return $mahasiswa;
-        return view('mahasiswa/index', compact('mahasiswa'));
+        return view('mahasiswa/index', compact('mahasiswa','jurusan'));
     }
 
     public function cetak()
@@ -138,5 +141,16 @@ class MahasiswaController extends Controller
     {
         $mahasiswa->delete();
         return redirect('mahasiswa')->with('status', 'Data Id '.$mahasiswa->id.' '.$mahasiswa->Nama.' berhasil dihapus');
+    }
+
+    public function filter(Request $request){
+        $id = $request->jurusan_id;
+        // $mahasiswa = DB::table('mahasiswas')->where('jurusan_id', '1')->first();
+
+        $mahasiswa = mahasiswa::where('jurusan_id' , $id)->get();
+
+        $jurusan = jurusan::all();
+        // return $id;
+        return view('mahasiswa/index', compact('mahasiswa','jurusan'));
     }
 }

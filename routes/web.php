@@ -56,6 +56,7 @@ Route::delete('jurusan/{id}', 'App\Http\Controllers\mahasiswa@deleteProses');
 Route::resource('dosen', 'App\Http\Controllers\DosenController');
 Route::resource('mahasiswa', 'App\Http\Controllers\MahasiswaController');
 Route::get('cetak', 'App\Http\Controllers\MahasiswaController@cetak')->name('cetak');
+Route::get('filter', 'App\Http\Controllers\MahasiswaController@filter')->name('filter');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

@@ -5,7 +5,7 @@
 
 <!-- breadscrumbs-->
 @section('breadscrumb')
-{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <div class="breadcrumbs">
     <div class="col-sm-4">
@@ -46,18 +46,18 @@
                         Data Mahasiswa
                     </strong>
                 </div>
-                <div class="pull-right">
+                {{-- <div class="pull-right">
                     <a href="{{url('cetak')}}" target="_blank" class="btn btn-success btn-sm">
                         <i class="fa fa-print"></i> cetak
                     </a>
                     <a href="{{url('mahasiswa/create')}}" class="btn btn-success btn-sm">
                         <i class="fa fa-plus"></i> add
                     </a>
-                    <a  class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-filter">
+                    <a href="{{url('mahasiswa/create')}}" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-filter">
                         <i class="fa fa-filter"></i> filter
                     </a>
 
-                </div>
+                </div> --}}
             </div>
             <div class="card-body table-responsive">
                 <table class="table table-border">
@@ -111,7 +111,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="modal-filter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -122,7 +122,7 @@
         </div>
 
         <div class="modal-body">
-          <form action="{{url('filter')}}" method="GET">
+          <form>
             <div class="form-group">
                 <label>Jurusan</label>
                 <select type="number" name="jurusan_id" class="form-control" @error('jurusan_id') is-invalid @enderror >
@@ -140,11 +140,11 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" >Filter</button>
+          <button type="button" class="btn btn-primary">Filter</button>
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 {{--
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
